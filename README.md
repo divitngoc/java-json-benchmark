@@ -12,7 +12,6 @@ So far, JSON libraries tested are:
 
 - Jackson Objectmapper
 - Jackson Objectmapper + Afterburner
-- Gson
 
 <br/>
 
