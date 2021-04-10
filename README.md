@@ -10,8 +10,9 @@ This project uses JMH benchmark tool to analyse benchmarks of different JSON lib
 
 So far, JSON libraries tested are:
 
-- Jackson Objectmapper
-- Jackson Objectmapper + Afterburner
+- Jackson default
+- Jackson + Afterburner
+- Jackson + Blackbird
 - Gson
 
 <br/>
@@ -21,28 +22,22 @@ I've used [Yapily API Accounts](https://api.yapily.com/explorer#!/Accounts/getAc
 Average time (lower the score, the better)
 
 ```
-Benchmark                                (accountSize)  Mode  Cnt  Score    Error  Units
-BenchMark.afterburnerJacksonDeserialize             10  avgt    3  0.007 ±  0.001   s/op
-BenchMark.afterburnerJacksonDeserialize           1000  avgt    3  0.768 ±  0.349   s/op
-BenchMark.afterburnerJacksonSerialize               10  avgt    3  0.006 ±  0.001   s/op
-BenchMark.afterburnerJacksonSerialize             1000  avgt    3  0.625 ±  0.139   s/op
-BenchMark.defaultJacksonDeserialize                 10  avgt    3  0.010 ±  0.002   s/op
-BenchMark.defaultJacksonDeserialize               1000  avgt    3  1.106 ±  0.573   s/op
-BenchMark.defaultJacksonSerialize                   10  avgt    3  0.006 ±  0.001   s/op
-BenchMark.defaultJacksonSerialize                 1000  avgt    3  0.645 ±  0.401   s/op
+Benchmark                                (accountSize)  Mode  Cnt     Score     Error  Units
+BenchmarkDeserialize.gson                           10  avgt    3    11.405 ±   1.596  ms/op
+BenchmarkDeserialize.gson                         1000  avgt    3  1268.343 ± 477.418  ms/op
+BenchmarkDeserialize.jacksonAfterburner             10  avgt    3     7.586 ±   0.911  ms/op
+BenchmarkDeserialize.jacksonAfterburner           1000  avgt    3   814.616 ± 477.825  ms/op
+BenchmarkDeserialize.jacksonBlackbird               10  avgt    3     7.641 ±   2.170  ms/op
+BenchmarkDeserialize.jacksonBlackbird             1000  avgt    3   836.611 ± 197.586  ms/op
+BenchmarkDeserialize.jacksonDefault                 10  avgt    3    10.504 ±   2.548  ms/op
+BenchmarkDeserialize.jacksonDefault               1000  avgt    3  1147.884 ± 864.878  ms/op
+BenchmarkSerialize.gson                             10  avgt    3    16.366 ±   3.409  ms/op
+BenchmarkSerialize.gson                           1000  avgt    3  1614.168 ± 279.891  ms/op
+BenchmarkSerialize.jacksonAfterburner               10  avgt    3     5.755 ±   0.302  ms/op
+BenchmarkSerialize.jacksonAfterburner             1000  avgt    3   649.342 ± 196.282  ms/op
+BenchmarkSerialize.jacksonBlackbird                 10  avgt    3     5.742 ±   0.940  ms/op
+BenchmarkSerialize.jacksonBlackbird               1000  avgt    3   649.175 ± 130.161  ms/op
+BenchmarkSerialize.jacksonDefaut                    10  avgt    3     5.828 ±   0.811  ms/op
+BenchmarkSerialize.jacksonDefaut                  1000  avgt    3   653.333 ± 450.157  ms/op
 ```
 
-
-<br/>
-Another set of results for throughput (the higher the score, the better)
-```
-Benchmark                                (accountSize)   Mode  Cnt    Score    Error  Units
-BenchMark.afterburnerJacksonDeserialize             10  thrpt    3  142.781 ± 11.907  ops/s
-BenchMark.afterburnerJacksonDeserialize           1000  thrpt    3    1.241 ±  0.625  ops/s
-BenchMark.afterburnerJacksonSerialize               10  thrpt    3  178.367 ±  3.358  ops/s
-BenchMark.afterburnerJacksonSerialize             1000  thrpt    3    1.655 ±  0.276  ops/s
-BenchMark.defaultJacksonDeserialize                 10  thrpt    3  101.303 ± 18.923  ops/s
-BenchMark.defaultJacksonDeserialize               1000  thrpt    3    0.943 ±  0.416  ops/s
-BenchMark.defaultJacksonSerialize                   10  thrpt    3  177.310 ± 15.535  ops/s
-BenchMark.defaultJacksonSerialize                 1000  thrpt    3    1.548 ±  0.544  ops/s
-```

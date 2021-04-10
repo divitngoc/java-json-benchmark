@@ -2,8 +2,6 @@ package com.divitbui.config;
 
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -25,20 +23,16 @@ public class GsonConfig {
                                                       .create();
 
     static class LocalDateTimeSerializer implements JsonSerializer<LocalDateTime> {
-        private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss");
-
         @Override
         public JsonElement serialize(LocalDateTime localDateTime, Type typeOfSrc, JsonSerializationContext context) {
-            return new JsonPrimitive(formatter.format(localDateTime));
+            return new JsonPrimitive(localDateTime.toString());
         }
     }
 
     static class LocalDateTimeDeserializer implements JsonDeserializer<LocalDateTime> {
         @Override
-        public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
-                                                                                                             throws JsonParseException {
-            return LocalDateTime.parse(json.getAsString(),
-                                       DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss").withLocale(Locale.ENGLISH));
+        public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+            return LocalDateTime.parse(json.getAsString());
         }
     }
 }
