@@ -11,12 +11,12 @@ import lombok.Getter;
 @Getter
 public class JacksonConfig {
 
-    private ObjectMapper defaultJacksonObjectMapper = new ObjectMapper().registerModule(new JavaTimeModule())
-                                                                        .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-    private ObjectMapper afterbunerJacksonObjectMapper = new ObjectMapper().registerModule(new JavaTimeModule())
-                                                                           .registerModules(new AfterburnerModule())
-                                                                           .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-    private ObjectMapper blackbirdJacksonObjectMapper = new ObjectMapper().registerModule(new JavaTimeModule())
-                                                                          .registerModules(new BlackbirdModule())
-                                                                          .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    private final ObjectMapper defaultJacksonObjectMapper = new ObjectMapper().registerModule(new JavaTimeModule())
+                                                                              .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    private final ObjectMapper afterbunerJacksonObjectMapper = new ObjectMapper().registerModule(new JavaTimeModule())
+                                                                                 .registerModules(new AfterburnerModule())
+                                                                                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    private final ObjectMapper blackbirdJacksonObjectMapper = new ObjectMapper().registerModule(new JavaTimeModule())
+                                                                                .registerModules(new BlackbirdModule())
+                                                                                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 }

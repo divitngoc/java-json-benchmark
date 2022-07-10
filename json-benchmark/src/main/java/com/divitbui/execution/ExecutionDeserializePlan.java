@@ -14,7 +14,7 @@ import lombok.Getter;
 @State(Scope.Benchmark)
 public class ExecutionDeserializePlan extends ExecutionBase {
 
-    public String yapilyAccountsJsonString;
+    private String yapilyAccountsJsonString;
 
     @Setup(Level.Invocation)
     public void setup(BenchmarkParamsState params) throws JsonProcessingException {
