@@ -5,6 +5,7 @@
     <groupId>com.divitbui</groupId>
     <artifactId>java-json-benchmark</artifactId>
     <version>FAKE</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>json-benchmark</module>
