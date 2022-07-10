@@ -22,22 +22,22 @@ I've used [Yapily API Accounts](https://api.yapily.com/explorer#!/Accounts/getAc
 Average time (lower the score, the better)
 
 ```
-Benchmark                                (accountSize)  Mode  Cnt     Score     Error  Units
-BenchmarkDeserialize.gson                           10  avgt    3    11.405 ±   1.596  ms/op
-BenchmarkDeserialize.gson                         1000  avgt    3  1268.343 ± 477.418  ms/op
-BenchmarkDeserialize.jacksonAfterburner             10  avgt    3     7.586 ±   0.911  ms/op
-BenchmarkDeserialize.jacksonAfterburner           1000  avgt    3   814.616 ± 477.825  ms/op
-BenchmarkDeserialize.jacksonBlackbird               10  avgt    3     7.641 ±   2.170  ms/op
-BenchmarkDeserialize.jacksonBlackbird             1000  avgt    3   836.611 ± 197.586  ms/op
-BenchmarkDeserialize.jacksonDefault                 10  avgt    3    10.504 ±   2.548  ms/op
-BenchmarkDeserialize.jacksonDefault               1000  avgt    3  1147.884 ± 864.878  ms/op
-BenchmarkSerialize.gson                             10  avgt    3    16.366 ±   3.409  ms/op
-BenchmarkSerialize.gson                           1000  avgt    3  1614.168 ± 279.891  ms/op
-BenchmarkSerialize.jacksonAfterburner               10  avgt    3     5.755 ±   0.302  ms/op
-BenchmarkSerialize.jacksonAfterburner             1000  avgt    3   649.342 ± 196.282  ms/op
-BenchmarkSerialize.jacksonBlackbird                 10  avgt    3     5.742 ±   0.940  ms/op
-BenchmarkSerialize.jacksonBlackbird               1000  avgt    3   649.175 ± 130.161  ms/op
-BenchmarkSerialize.jacksonDefaut                    10  avgt    3     5.828 ±   0.811  ms/op
-BenchmarkSerialize.jacksonDefaut                  1000  avgt    3   653.333 ± 450.157  ms/op
+Benchmark                                (accountSize)  Mode  Cnt     Score      Error  Units
+BenchmarkDeserialize.gson                           10  avgt    3    19.202 Â±   18.652  ms/op
+BenchmarkDeserialize.gson                         1000  avgt    3  2307.272 Â± 1728.842  ms/op
+BenchmarkDeserialize.jacksonAfterburner             10  avgt    3    14.858 Â±   10.029  ms/op
+BenchmarkDeserialize.jacksonAfterburner           1000  avgt    3  1633.823 Â±  530.238  ms/op
+BenchmarkDeserialize.jacksonBlackbird               10  avgt    3    14.238 Â±    4.111  ms/op
+BenchmarkDeserialize.jacksonBlackbird             1000  avgt    3  1651.604 Â±  441.165  ms/op
+BenchmarkDeserialize.jacksonDefault                 10  avgt    3    19.976 Â±    9.786  ms/op
+BenchmarkDeserialize.jacksonDefault               1000  avgt    3  2315.070 Â±  471.364  ms/op
+BenchmarkSerialize.gson                             10  avgt    3    29.376 Â±   33.918  ms/op
+BenchmarkSerialize.gson                           1000  avgt    3  2977.030 Â±  583.201  ms/op
+BenchmarkSerialize.jacksonAfterburner               10  avgt    3    16.259 Â±   22.834  ms/op
+BenchmarkSerialize.jacksonAfterburner             1000  avgt    3  1485.304 Â± 1012.453  ms/op
+BenchmarkSerialize.jacksonBlackbird                 10  avgt    3    15.826 Â±   14.766  ms/op
+BenchmarkSerialize.jacksonBlackbird               1000  avgt    3  1610.428 Â±  367.462  ms/op
+BenchmarkSerialize.jacksonDefaut                    10  avgt    3    19.449 Â±   40.626  ms/op
+BenchmarkSerialize.jacksonDefaut                  1000  avgt    3  1686.815 Â± 1306.903  ms/op
 ```
 
